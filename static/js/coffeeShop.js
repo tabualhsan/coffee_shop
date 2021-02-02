@@ -8,13 +8,6 @@ const addItemToCart = (itemName) => {
   `);
 };
 
-$('.add-to-order').on('click', (evt) =>{
-  addItemToCart('Coffee');
-  incrementCartTotal(1.50);
-});
-
-
-
 
 const resetCart = () => {
   $('#cart-total').html('0.00');
@@ -46,3 +39,14 @@ const setProgressAndStatus = (progressVal, statusMsg) => {
 //
 // Add your event handlers below.
 //
+
+
+$('.add-to-order').on('click', (evt) =>{
+  addItemToCart('Coffee');
+  incrementCartTotal(1.50);
+});
+
+$('#place-order').on('click', (evt) =>{
+  incrementCoffeeSold($('#cart-items').children().length);
+  resetCart();
+});
