@@ -8,6 +8,14 @@ const addItemToCart = (itemName) => {
   `);
 };
 
+$('.add-to-order').on('click', (evt) =>{
+  addItemToCart('Coffee');
+  incrementCartTotal(1.50);
+});
+
+
+
+
 const resetCart = () => {
   $('#cart-total').html('0.00');
   $('#cart-items').empty();
